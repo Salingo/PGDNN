@@ -78,12 +78,12 @@ for line in lines:
 random.shuffle(trainList)
 f.close()
 
-para_ts = [var for var in tf.trainable_variables() if any(x in var.name for x in ['_e', 'fc_w', 'encoder'])]
-para_rec = [var for var in tf.trainable_variables() if any(x in var.name for x in ['_d', 'scale'])]
-
 # setup network
 iGEN = network.iGEN(BATCH_SIZE,is_training)
 update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
+
+para_ts = [var for var in tf.trainable_variables() if any(x in var.name for x in ['_e', 'fc_w', 'encoder'])]
+para_rec = [var for var in tf.trainable_variables() if any(x in var.name for x in ['_d', 'scale'])]
 with tf.control_dependencies(update_ops):
     with tf.name_scope('train'):
         optimizer_ts = tf.train.AdamOptimizer(learning_rate=LEARNING_RATE).minimize(iGEN.ts_loss, var_list=para_ts)
