@@ -1,4 +1,4 @@
-## PGDNN: Predictive and Generative Neural Networks for Object Functionality
+## Predictive and Generative Neural Networks for Object Functionality
 
 ### Introduction
 
