@@ -14,6 +14,8 @@ For more details, please refer to our [paper](http://www.cs.sfu.ca/~haoz/pubs/hu
 
 In our experiment, All the codes are tested under Tensorflow 1.4 GPU version and Python 3.5 on Ubuntu 14.04.
 
+First, please extract `label.zip`, `scene.zip`, `shape.zip` in PGDNN/Data/ folder.
+
 To train the model of fSIM-NET, iGEN-NET, iSEG_NET, just run train.py in each folder, the model will be stored at PGDNN/Model
 
 To predict the functionality label for an object, run PGDNN/fSIM-NET/test.py, the probabilities will be stored at PGDNN/Output/fSIM
